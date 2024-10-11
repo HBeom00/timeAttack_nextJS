@@ -1,8 +1,11 @@
-const revalidate: 10;
 const Isrtest = async () => {
   const res = await fetch(
     "https://korean-advice-open-api.vercel.app/api/advice",
-    {}
+    {
+      next: {
+        revalidate: 10,
+      },
+    }
   );
   const data = await res.json();
 
